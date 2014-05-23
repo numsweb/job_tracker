@@ -1,0 +1,8 @@
+*.log
+*.sql
+*.sqlite
+/tmp/*
+tmp/*
+.bundle
+.idea
+/config/database.yml
