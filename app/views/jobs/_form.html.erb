@@ -1,0 +1,69 @@
+<%= form_for(@job) do |f| %>
+  <% if @job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+      <% @job.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company %><br>
+    <%= f.text_field :company %>
+  </div>
+  <div class="field">
+    <%= f.label :recruiter %><br>
+    <%= f.text_field :recruiter %>
+  </div>
+  <div class="field">
+    <%= f.label :recruiter_email %><br>
+    <%= f.text_field :recruiter_email %>
+  </div>
+  <div class="field">
+    <%= f.label :last_contact %><br>
+    <%= f.datetime_select :last_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :recruiter_phone %><br>
+    <%= f.text_field :recruiter_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :recruiter_cell %><br>
+    <%= f.text_field :recruiter_cell %>
+  </div>
+  <div class="field">
+    <%= f.label :company_website %><br>
+    <%= f.text_field :company_website %>
+  </div>
+  <div class="field">
+    <%= f.label :company_address %><br>
+    <%= f.text_area :company_address %>
+  </div>
+  <div class="field">
+    <%= f.label :company_contact %><br>
+    <%= f.text_field :company_contact %>
+  </div>
+  <div class="field">
+    <%= f.label :company_phone %><br>
+    <%= f.text_field :company_phone %>
+  </div>
+  <div class="field">
+    <%= f.label :position %><br>
+    <%= f.text_field :position %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.select(:status, Status.all.collect{|s| [s.name, s.id]})%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

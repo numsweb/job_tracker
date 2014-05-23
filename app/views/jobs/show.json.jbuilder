@@ -1,0 +1,1 @@
+json.extract! @job, :id, :company, :recruiter, :recruiter_email, :last_contact, :recruiter_phone, :recruiter_cell, :company_website, :company_address, :company_contact, :company_phone, :position, :comments, :status, :created_at, :updated_at

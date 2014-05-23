@@ -1,0 +1,25 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+
+footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
+.jobs-table {width:850px;border:1px solid #eaeaea;}
+.jobs-table td {padding:10px;}
+.deactivated { background-color: #F5A9A9;}
+.active {background-color: #58FA82}
+.last-contact {width:150px;}
+
+.new {background-color: #E0F8F7;}
+.waiting {background-color: #D7DF01}
+.submitting {background-golor: #04B4AE}
+.screen-scheduled { background-golor: #81F79F;}
+.interview-scheduled {background-color: #298A08}
+.deactivated { background-color: #F5A9A9;}
+.dead {background-color: #424242;color:#999;}
+
+
