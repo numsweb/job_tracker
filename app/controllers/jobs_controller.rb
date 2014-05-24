@@ -4,12 +4,7 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    if params[:order]
-    @jobs = Job.all.order("#{params[:order]} ASC")
-    else
-      @jobs = Job.all.order("created_at ASC")
-    end
-
+    @jobs = Job.search(params)
   end
 
   # GET /jobs/1
