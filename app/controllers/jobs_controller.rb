@@ -4,7 +4,19 @@ class JobsController < ApplicationController
   # GET /jobs
   # GET /jobs.json
   def index
-    @jobs = Job.search(params)
+    #set up logic for the order links (ASC/DESC)
+    if session[:sort_order].blank?
+      session[:sort_order] = "ASC"
+    else
+      case session[:sort_order]
+        when "ASC"
+          session[:sort_order] = "DESC"
+        when "DESC"
+          session[:sort_order] = "ASC"
+      end
+    end
+
+    @jobs = Job.search(params.merge(:sort_order => session[:sort_order]))
   end
 
   # GET /jobs/1

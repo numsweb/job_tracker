@@ -3,7 +3,7 @@ class Job < ActiveRecord::Base
 
   def self.search(params)
     if params[:order]
-      @jobs = Job.all.order("#{params[:order]} ASC")
+      @jobs = Job.all.order("#{params[:order]} #{params[:sort_order]}")
     elsif params[:search] && params[:search][:item]
       @jobs = Job.where(
           "company LIKE '%#{params[:search][:item]}%'
