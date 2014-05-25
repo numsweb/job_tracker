@@ -1,4 +1,9 @@
 <h1>Statuses</h1>
+
+<div class="new-link">
+  <%= link_to 'New Status', new_status_path, class: "btn btn-primary btn-small" %>
+</div>
+
 <div class="jobs-table">
     <table>
       <thead>
@@ -12,9 +17,9 @@
         <% @statuses.each do |status| %>
           <tr>
             <td><%= status.name %></td>
-            <td><%= link_to 'Show', status %></td>
-            <td><%= link_to 'Edit', edit_status_path(status) %></td>
-            <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', status, :class => "btn btn-primary btn-small" %></td>
+            <td><%= link_to 'Edit', edit_status_path(status),:class => "btn btn-primary btn-small"  %></td>
+            <td><%= link_to 'Destroy', status, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-primary btn-small"  %></td>
           </tr>
         <% end %>
       </tbody>
@@ -23,4 +28,7 @@
 
 <br>
 
-<%= link_to 'New Status', new_status_path %>
+<div class="new-link">
+  <%= link_to 'New Status', new_status_path, class: "btn btn-primary btn-small" %>
+</div>
+

@@ -4,6 +4,11 @@
   <%= render :partial => "layouts/search_form" %>
 </div>
 
+
+<div class="new-link">
+  <a href="/jobs/new" class="btn btn-primary btn-small"><i class="icon-white icon-heart"></i> New Job</a>
+</div>
+
 <div class="jobs-table">
     <table>
       <thead>
@@ -23,14 +28,16 @@
             <td><%= job.recruiter[0..20] unless job.recruiter.blank? %></td>
             <td class="last-contact"><%= job.last_contact.strftime("%m-%d-%Y") %></td>
             <td><%= Status.find(job.status).name %></td>
-            <td><%= link_to 'Show', job %></td>
-            <td><%= link_to 'Edit', edit_job_path(job) %></td>
-            <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Show', job, class: "btn btn-primary btn-small" %></td>
+            <td><%= link_to 'Edit', edit_job_path(job), class: "btn btn-primary btn-small" %></td>
+            <td><%= link_to 'Destroy', job, class: "btn btn-primary btn-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
 </div>
 <br>
+<div class="new-link">
+  <a href="/jobs/new" class="btn btn-primary btn-small"><i class="icon-white icon-heart"></i> New Job</a>
+</div>
 
-<%= link_to 'New Job', new_job_path %>
