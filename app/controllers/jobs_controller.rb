@@ -36,7 +36,9 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    create_params = job_params
+    create_params[:last_contact] = Date.strptime(job_params[:last_contact], "%m-%d-%Y")
+    @job = Job.new(create_params)
 
     respond_to do |format|
       if @job.save
@@ -53,7 +55,9 @@ class JobsController < ApplicationController
   # PATCH/PUT /jobs/1.json
   def update
     respond_to do |format|
-      if @job.update(job_params)
+      update_params = job_params
+      update_params[:last_contact] = Date.strptime(job_params[:last_contact], "%m-%d-%Y")
+      if @job.update(update_params)
         format.html { redirect_to jobs_path, notice: 'Job was successfully updated.' }
         format.json { render :show, status: :ok, location: @job }
       else

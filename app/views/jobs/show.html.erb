@@ -17,7 +17,7 @@
         <td><%= @job.company %></td>
         <td><%= @job.recruiter %></td>
         <td><%= @job.recruiter_email %></td>
-        <td><%= @job.last_contact.strftime("%m-%d-%Y") %></td>
+        <td><%= @job.last_contact.strftime("%m-%d-%Y") unless @job.last_contact.blank? %></td>
         <td><%= @job.recruiter_phone %></td>
         <td><%= @job.recruiter_cell %></td>
 
