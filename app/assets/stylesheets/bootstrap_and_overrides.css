@@ -29,5 +29,8 @@ h1 {color: #0044cc}
 .nav li a {color:  #0044cc}
 .active{background-color: #ffffff;color: #0044cc;}
 
-.nav-pills>.active>a {background-color:#0044cc }
+.nav-pills .active a {background-color:#0044cc }
+.jqte {width: 700px;}
+textarea {height: 50px;}
+td {padding-right:30px;}
 

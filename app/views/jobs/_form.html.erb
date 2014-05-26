@@ -14,13 +14,13 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company %><br>
+          <%= f.label :company %>
           <%= f.text_field :company %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :recruiter %><br>
+          <%= f.label :recruiter %>
           <%= f.text_field :recruiter %>
         </div>
       </td>
@@ -29,13 +29,13 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :recruiter_email %><br>
+          <%= f.label :recruiter_email %>
           <%= f.text_field :recruiter_email %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :recruiter_phone %><br>
+          <%= f.label :recruiter_phone %>
           <%= f.text_field :recruiter_phone %>
         </div>
       </td>
@@ -44,13 +44,13 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :recruiter_cell %><br>
+          <%= f.label :recruiter_cell %>
           <%= f.text_field :recruiter_cell %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :last_contact %><br>
+          <%= f.label :last_contact %>
           <input type="text" name="job[last_contact]" value=<%= @job.last_contact.blank? ? Time.now.to_date.strftime("%m-%d-%Y") :  @job.last_contact.to_date.strftime("%m-%d-%Y")%> data-behaviour='datepicker' >
         </div>
       </td>
@@ -59,13 +59,13 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company_website %><br>
+          <%= f.label :company_website %>
           <%= f.text_field :company_website %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :position %><br>
+          <%= f.label :position %>
           <%= f.text_field :position %>
         </div>
       </td>
@@ -73,13 +73,13 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company_contact %><br>
+          <%= f.label :company_contact %>
           <%= f.text_field :company_contact %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :company_phone %><br>
+          <%= f.label :company_phone %>
           <%= f.text_field :company_phone %>
         </div>
       </td>
@@ -87,30 +87,24 @@
     <tr>
       <td>
         <div class="field">
-
-          <%= f.label :company_address %><br>
+          <%= f.label :company_address %>
           <%= f.text_area :company_address %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :comments %><br>
-          <%= f.text_area :comments %>
-        </div>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <div class="field">
-          <%= f.label :status %><br>
+          <%= f.label :status %>
           <%= f.select(:status, Status.all.collect{|s| [s.name, s.id]})%>
         </div>
       </td>
-      <td>
-
-      </td>
     </tr>
   </table>
+
+  <div class="field">
+     <%= f.label :comments %>
+     <%= f.text_area :comments, class: "comments"%>
+   </div>
+
   <div class="actions">
     <%= f.submit class: "btn btn-primary btn-small"%>
   </div>
@@ -123,5 +117,6 @@
       format: 'mm-dd-yyyy',
       autoclose: true
      });
+    $(".comments").jqte();
   })
 </script>
