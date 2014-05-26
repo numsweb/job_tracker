@@ -6,7 +6,7 @@
   =require twitter-bootstrap-static/fontawesome
   */
 
-
+body {margin-left:10px;}
 footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
 .jobs-table {width:900px;border:1px solid #eaeaea;}
 .jobs-table td {padding:10px;}
@@ -25,7 +25,9 @@ footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
 
 #search_item{margin-top:10px;}
 .new-link{padding-bottom:20px;}
+h1 {color: #0044cc}
+.nav li a {color:  #0044cc}
+.active{background-color: #ffffff;color: #0044cc;}
 
-
-
+.nav-pills>.active>a {background-color:#0044cc }
 
