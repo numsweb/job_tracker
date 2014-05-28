@@ -15,12 +15,15 @@ footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
 .last-contact {width:150px;}
 
 .new {background-color: #E0F8F7;}
-.waiting {background-color: #D7DF01}
-.submitting {background-golor: #04B4AE}
-.screen-scheduled { background-golor: #81F79F;}
+.waiting-feedback {background-color: #D7DF01}
+.submitted-info {background-color: #04B4AE !important}
+.call-screen-scheduled { background-color: #81F79F;}
 .interview-scheduled {background-color: #298A08}
 .deactivated { background-color: #F5A9A9;}
-.dead {background-color: #424242;color:#999;}
+.dead-lead {background-color: #424242;color:#999;}
+.not-accepted {background-color: #000000;color:#900}
+.hired {background-color: #81F79F; color:#666666;}
+.resigned {background-color: #B00100;color:#ffffff;}
 
 
 #search_item{margin-top:10px;}

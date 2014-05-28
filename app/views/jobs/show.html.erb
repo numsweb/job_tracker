@@ -53,7 +53,7 @@
 
 <p>
   <strong>Comments</strong><br/>
-  <%= @job.comments.html_safe %>
+  <%= @job.comments.html_safe unless @job.comments.blank? %>
 </p>
 
 
