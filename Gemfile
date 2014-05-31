@@ -12,6 +12,12 @@ gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootst
 gem 'rubyXL'
 gem 'bootstrap-datepicker-rails'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'factory_girl'
+end
+
 
 
 
