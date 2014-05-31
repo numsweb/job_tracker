@@ -59,6 +59,9 @@ GEM
     execjs (2.0.2)
     factory_girl (4.4.0)
       activesupport (>= 3.0.0)
+    factory_girl_rails (4.4.1)
+      factory_girl (~> 4.4.0)
+      railties (>= 3.0.0)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.7)
@@ -75,8 +78,9 @@ GEM
     mini_portile (0.6.0)
     minitest (5.3.4)
     multi_json (1.10.1)
-    mysql (2.9.1)
-    mysql (2.9.1-x86-mingw32)
+    mysql2 (0.3.16)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     nokogiri (1.6.2.1-x86-mingw32)
       mini_portile (= 0.6.0)
     polyglot (0.3.4)
@@ -154,16 +158,17 @@ GEM
       nokogiri (~> 1.3)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
   bootstrap-datepicker-rails
   capybara
   coffee-rails (~> 4.0.0)
-  factory_girl
+  factory_girl_rails
   jbuilder (~> 2.0)
   jquery-rails
-  mysql
+  mysql2
   rails (= 4.1.1)
   rspec-rails
   rubyXL
