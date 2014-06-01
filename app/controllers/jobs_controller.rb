@@ -38,13 +38,19 @@ class JobsController < ApplicationController
   def create
     create_params = job_params
     create_params[:last_contact] = Date.strptime(job_params[:last_contact], "%m-%d-%Y")
+    Rails.logger.info ("\n\n.........Create using #{create_params.inspect}\n\n")
+
     @job = Job.new(create_params)
+
+
+
 
     respond_to do |format|
       if @job.save
         format.html { redirect_to jobs_path, notice: 'Job was successfully created.' }
         format.json { render :show, status: :created, location: @job }
       else
+        Rails.logger.info("\n\n.....Job errors #{@job.errors.inspect}\n\n")
         format.html { render :new }
         format.json { render json: @job.errors, status: :unprocessable_entity }
       end
