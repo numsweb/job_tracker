@@ -34,7 +34,6 @@ describe JobsController do
 
   describe "GET index" do
     it "assigns all jobs as @jobs" do
-
       job = Job.create! valid_attributes
       get :index, {}, valid_session
       assigns(:jobs).should eq([job])
@@ -161,4 +160,7 @@ describe JobsController do
     end
   end
 
+
 end
+
+
