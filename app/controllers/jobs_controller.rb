@@ -17,11 +17,20 @@ class JobsController < ApplicationController
     end
 
     @jobs = Job.search(params.merge(:sort_order => session[:sort_order]))
+    respond_to do |format|
+      format.html { render :index}
+      format.json {render @jobs.to_json, status: :ok}
+    end
   end
 
   # GET /jobs/1
   # GET /jobs/1.json
   def show
+    @job=Job.find(params[:id])
+    respond_to do |format|
+      format.html { render :show}
+      format.json {render @job, status: :ok}
+    end
   end
 
   # GET /jobs/new
@@ -36,8 +45,7 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    create_params = job_params
-    create_params[:last_contact] = Date.strptime(job_params[:last_contact], "%m-%d-%Y")
+    create_params = job_params.merge(last_contact: Date.strptime(job_params[:last_contact], "%m-%d-%Y"))
     Rails.logger.info ("\n\n.........Create using #{create_params.inspect}\n\n")
 
     @job = Job.new(create_params)

@@ -7,7 +7,7 @@ gem 'rails', '4.1.1'
 #gem 'sqlite3'
 
 #things I've addded
-gem 'mysql2'
+gem 'mysql'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'rubyXL'
 gem 'bootstrap-datepicker-rails'
