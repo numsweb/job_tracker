@@ -24,4 +24,8 @@ class Calculator
   def divide
     @result = @args[0] / @args[1]
   end
+
+  def power
+    @result = @args[0] ** @args[1]
+  end
 end

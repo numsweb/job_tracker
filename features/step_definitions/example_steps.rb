@@ -15,12 +15,15 @@ Then(/^the result should be (\d+) on the screen$/) do |arg1|
   @calculator.result
 end
 
-
 When(/^I press multiply$/) do
   @calculator.multiply
 end
 
 When(/^I press divide/) do
   @calculator.divide
+end
+
+When(/^I press power/) do
+  @calculator.power
 end
 

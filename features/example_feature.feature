@@ -1,7 +1,7 @@
 Feature: Addition
   In order to avoid silly mistakes
   As a math idiot
-  I want to be told the sum of two numbers
+  I want to be told the answer to various math operations
 
   Scenario: Add two numbers
     Given I have entered 50 into the calculator
@@ -20,3 +20,9 @@ Feature: Addition
     And I have then entered 10 into the calculator
     When I press divide
     Then the result should be 20 on the screen
+
+  Scenario: Rails one number to the other's power
+    Given I have entered 2 into the calculator
+    And I have then entered 3 into the calculator
+    When I press power
+    Then the result should be 8 on the screen
