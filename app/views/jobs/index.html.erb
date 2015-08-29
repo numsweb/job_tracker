@@ -23,7 +23,7 @@
 
       <tbody>
         <% @jobs.each do |job| %>
-          <tr  class=<%= set_class(job)  %> >
+          <tr  style="<%= job.status.style  %>" >
             <td><%= job.company %></td>
             <td><%= job.recruiter[0..20] unless job.recruiter.blank? %></td>
             <td class="last-contact"><%= job.last_contact.strftime("%m-%d-%Y") unless job.last_contact.blank? %></td>

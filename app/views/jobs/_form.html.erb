@@ -93,8 +93,8 @@
       </td>
       <td>
         <div class="field">
-          <%= f.label :status %>
-          <%= f.select(:status, Status.all.collect{|s| [s.name, s.id]})%>
+          <%= f.label :status_id %>
+          <%= f.select(:status_id, Status.all.collect{|s| [s.name, s.id]})%>
         </div>
       </td>
     </tr>

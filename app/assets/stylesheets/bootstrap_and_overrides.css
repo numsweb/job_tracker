@@ -8,22 +8,11 @@
 
 body {margin-left:10px;}
 footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
-.jobs-table {width:900px;border:1px solid #eaeaea;}
+.jobs-table {width:900px;}
 .jobs-table td {padding:10px;}
 .deactivated { background-color: #F5A9A9;}
 .active {background-color: #58FA82}
 .last-contact {width:150px;}
-
-.new {background-color: #E0F8F7;}
-.waiting-feedback {background-color: #D7DF01}
-.submitted-info {background-color: #04B4AE !important}
-.call-screen-scheduled { background-color: #81F79F;}
-.interview-scheduled {background-color: #298A08}
-.deactivated { background-color: #F5A9A9;}
-.dead-lead {background-color: #424242;color:#999;}
-.not-accepted {background-color: #000000;color:#900}
-.hired {background-color: #81F79F; color:#666666;}
-.resigned {background-color: #B00100;color:#ffffff;}
 
 
 #search_item{margin-top:10px;}

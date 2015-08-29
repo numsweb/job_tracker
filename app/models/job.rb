@@ -2,7 +2,8 @@ class Job < ActiveRecord::Base
 
   validates_presence_of :company
   validates_presence_of :position
-  validates_presence_of :status
+  validates_presence_of :status_id
+  belongs_to :status
 
 
   def self.search(params)

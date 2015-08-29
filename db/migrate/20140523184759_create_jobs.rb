@@ -13,7 +13,7 @@ class CreateJobs < ActiveRecord::Migration
       t.string :company_phone
       t.string :position
       t.text :comments
-      t.integer :status
+      t.integer :status_id
 
       t.timestamps
     end
