@@ -26,3 +26,10 @@ h1 {color: #0044cc}
 textarea {height: 50px;}
 td {padding-right:30px;}
 
+
+.required{
+  color: #ff0000;
+  display: inline;
+}
+
+label{display: inline;}

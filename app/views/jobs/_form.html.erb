@@ -14,7 +14,7 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company %>
+          <%= f.label :company %>  <span class="required"> *  </span> <br/>
           <%= f.text_field :company %>
         </div>
       </td>
@@ -65,7 +65,7 @@
       </td>
       <td>
         <div class="field">
-          <%= f.label :position %>
+          <%= f.label :position %> <span class="required"> *  </span> <br/>
           <%= f.text_field :position %>
         </div>
       </td>
@@ -93,7 +93,7 @@
       </td>
       <td>
         <div class="field">
-          <%= f.label :status_id %>
+          <%= f.label :status_id %>  <span class="required"> *  </span> <br/>
           <%= f.select(:status_id, Status.all.collect{|s| [s.name, s.id]})%>
         </div>
       </td>
