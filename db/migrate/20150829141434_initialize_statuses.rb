@@ -1,6 +1,5 @@
 class InitializeStatuses < ActiveRecord::Migration
   def change
-    add_column :statuses, :style, :string
     Status.create(name: "New", style:  "background-color:#E0F8F7;")
     Status.create(name: "Waiting Feedback", style: "background-color: #D7DF01;")
     Status.create(name: "Submitted Info", style: "background-color: #04B4AE;")

@@ -23,9 +23,9 @@ describe JobsController do
   # This should return the minimal set of attributes required to create a valid
   # Job. As you add validations to Job, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { {position: "test position", status: create(:status, name: "the status").id, company: "New Company", last_contact: "05-31-2014" } }
+  let(:valid_attributes) { {position: "test position", status_id: create(:status, name: "the status").id, company: "New Company", last_contact: "05-31-2014" } }
 
-  let(:invalid_attributes) { {position: "test position", status: create(:status, name: "the status").id, last_contact: "05-31-2014" } }
+  let(:invalid_attributes) { {position: "test position", status_id: create(:status, name: "the status").id, last_contact: "05-31-2014" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in

@@ -1,9 +1,10 @@
 require 'spec_helper'
 
 describe 'Web page tests', :type => :request do
+
   status = Status.create(:name => "the status")
 
-  valid_attributes = {position: "test position", status: status.id, company: "New Company", last_contact: "05-31-2014" }
+  valid_attributes = {position: "test position", status_id: status.id, company: "New Company", last_contact: "05-31-2014" }
   valid_status_attributes = {name: "test status"}
 
   describe 'jobs web page test' do
@@ -42,22 +43,7 @@ describe 'Web page tests', :type => :request do
     end
   end
 
-  describe 'jobs web page test JS ', :js => true do
-    it "should load Jobs page" do
-      visit 'http://localhost:3000/jobs'
-      page.should have_content('Job Tracker')
-    end
-
-    it "should load Statuses page" do
-      visit 'http://localhost:3000/statuses'
-      page.should have_content('Statuses')
-    end
-
-  end
-
-
-
-
-
 
 end
+
+

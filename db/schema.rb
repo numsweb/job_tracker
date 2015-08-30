@@ -36,10 +36,9 @@ ActiveRecord::Schema.define(version: 20150829141434) do
 
   create_table "statuses", force: true do |t|
     t.string   "name"
-    t.integer  "status_id"
+    t.string   "style"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "style"
   end
 
 end
