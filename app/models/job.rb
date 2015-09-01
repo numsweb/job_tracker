@@ -8,8 +8,13 @@ class Job < ActiveRecord::Base
 
   def self.search(params)
     if params[:order]
-      @jobs = Job.all.order("#{params[:order]} #{params[:sort_order]}")
+      if params[:order] == "status"
+         @jobs = Job.all.includes(:status).order("statuses.name #{params[:sort_order]}")
+      else
+        @jobs = Job.all.order("#{params[:order]} #{params[:sort_order]}")
+      end
     elsif params[:search] && params[:search][:item]
+      #TODO: need to make search case insensitive
       @jobs = Job.where(
           "company LIKE '%#{params[:search][:item]}%'
             OR recruiter LIKE '%#{params[:search][:item]}%'

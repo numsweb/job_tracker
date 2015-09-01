@@ -8,11 +8,12 @@
 
 body {margin-left:10px;}
 footer {border-top:1px solid #cacaca;padding-top:10px;margin-top:10px;}
+
 .jobs-table {width:900px;}
 .jobs-table td {padding:10px;}
 .deactivated { background-color: #F5A9A9;}
 .active {background-color: #58FA82}
-.last-contact {width:150px;}
+.last-contact {width:150px;text-align: center;}
 
 
 #search_item{margin-top:10px;}

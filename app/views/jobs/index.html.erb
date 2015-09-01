@@ -17,7 +17,7 @@
           <th><%= link_to "Recruiter", '/jobs_all/recruiter' %></th>
           <th><%= link_to "Last contact", '/jobs_all/last_contact' %></th>
           <th><%= link_to "Status", '/jobs_all/status' %></th>
-          <th colspan="3"></th>
+          <th colspan="3">Actions</th>
         </tr>
       </thead>
 
@@ -27,7 +27,7 @@
             <td><%= job.company %></td>
             <td><%= job.recruiter[0..20] unless job.recruiter.blank? %></td>
             <td class="last-contact"><%= job.last_contact.strftime("%m-%d-%Y") unless job.last_contact.blank? %></td>
-            <td><%= Status.find(job.status).name %></td>
+            <td><%= job.status.name %></td>
             <td><%= link_to 'Show', job, class: "btn btn-primary btn-small" %></td>
             <td><%= link_to 'Edit', edit_job_path(job), class: "btn btn-primary btn-small" %></td>
             <td><%= link_to 'Destroy', job, class: "btn btn-primary btn-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
