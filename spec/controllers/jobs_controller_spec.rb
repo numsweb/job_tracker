@@ -31,6 +31,12 @@ describe JobsController do
   # in order to pass any filters (e.g. authentication) defined in
   # JobsController. Be sure to keep this updated too.
   let(:valid_session) { {} }
+  
+  before(:each) do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user = FactoryGirl.create(:user)
+    login_user(user)
+  end
 
   describe "GET index" do
     it "assigns all jobs as @jobs" do

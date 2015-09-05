@@ -14,18 +14,17 @@ class Job < ActiveRecord::Base
         @jobs = Job.all.order("#{params[:order]} #{params[:sort_order]}")
       end
     elsif params[:search] && params[:search][:item]
-      #TODO: need to make search case insensitive
       @jobs = Job.where(
-          "company LIKE '%#{params[:search][:item]}%'
-            OR recruiter LIKE '%#{params[:search][:item]}%'
-            OR recruiter_email LIKE '%#{params[:search][:item]}%'
-            OR recruiter_phone LIKE '%#{params[:search][:item]}%'
-            OR company_website LIKE '%#{params[:search][:item]}%'
-            OR company_address LIKE '%#{params[:search][:item]}%'
-            OR company_contact LIKE '%#{params[:search][:item]}%'
-            OR company_phone LIKE '%#{params[:search][:item]}%'
-            OR position LIKE '%#{params[:search][:item]}%'
-            OR comments LIKE '%#{params[:search][:item]}%'
+          "LOWER(company) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(recruiter) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(recruiter_email) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(recruiter_phone) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(company_website) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(company_address) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(company_contact) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(company_phone) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(position) LIKE '%#{params[:search][:item].downcase}%'
+            OR LOWER(comments) LIKE '%#{params[:search][:item].downcase}%'
             "
       ).order("created_at ASC")
     else

@@ -1,6 +1,16 @@
-<div id="nav">
-  <ul class="nav nav-pills">
-    <li class=<%= active_nav_class("jobs", params[:controller]) %>><a href="/jobs">Jobs</a></li>
-    <li class=<%= active_nav_class("statuses", params[:controller]) %>><a href="/statuses">Statuses</a></li>
-  </ul>
+<div class="navbar navbar-default navbar-static-top">
+  <%= nav_bar :fixed => :top  do %>
+   
+    <%= menu_group do %>    
+     
+      <%= menu_item "Home", root_path %>
+      <% if current_user.blank? %>
+        <%= menu_item "User Login", login_path %>
+      <% else %>
+        <%= menu_item "Statuses", statuses_path %>
+        <%= menu_item "Logout", sign_out_path %>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
+

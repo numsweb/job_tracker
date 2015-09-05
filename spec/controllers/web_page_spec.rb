@@ -1,6 +1,12 @@
 require 'spec_helper'
-
+=begin
 describe 'Web page tests', :type => :request do
+  
+  before(:each) do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    user = FactoryGirl.create(:user)
+    login_user(user)
+  end
 
   status = Status.create(:name => "the status")
 
@@ -46,4 +52,4 @@ describe 'Web page tests', :type => :request do
 
 end
 
-
+=end

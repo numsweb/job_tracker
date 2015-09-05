@@ -1,5 +1,6 @@
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # GET /jobs
   # GET /jobs.json
@@ -17,6 +18,7 @@ class JobsController < ApplicationController
     end
 
     @jobs = Job.search(params.merge(:sort_order => session[:sort_order]))
+    @statuses = Status.all
     respond_to do |format|
       format.html { render :index}
       format.json {render @jobs.to_json, status: :ok}

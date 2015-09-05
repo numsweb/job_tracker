@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :statuses
   resources :jobs
 
@@ -9,6 +10,14 @@ Rails.application.routes.draw do
   root 'jobs#index'
 
   get 'jobs_all/:order' => 'jobs#index'
+  
+  
+  devise_scope :user do 
+    get "/sign_out", to: "devise/sessions#destroy"
+    get "/logout", to: "devise/sessions#destroy"
+    get "/login", to: "devise/sessions#new"
+    post "/login", to: "devise/sessions#create"
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
