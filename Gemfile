@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.1.2"
+#ruby "2.1.2"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
@@ -8,11 +8,12 @@ gem 'rails', '4.1.4'
 #gem 'sqlite3'
 
 #things I've addded
-#gem 'mysql'
-gem 'pg'
+gem 'mysql'
+#gem 'pg'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'rubyXL'
 gem 'bootstrap-datepicker-rails'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'rspec-rails'
