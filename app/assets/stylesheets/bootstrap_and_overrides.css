@@ -34,3 +34,6 @@ td {padding-right:30px;}
 }
 
 label{display: inline;}
+.job_edit {width: 300px;}
+textarea {width: 300px;}
+.jqte_tool_label{height: 21px !important;}

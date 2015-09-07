@@ -15,28 +15,13 @@
       <td>
         <div class="field">
           <%= f.label :company %>  <span class="required"> *  </span> <br/>
-          <%= f.text_field :company %>
+          <%= f.text_field :company, class: "job_edit_field" %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :recruiter %>
-          <%= f.text_field :recruiter %>
-        </div>
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        <div class="field">
-          <%= f.label :recruiter_email %>
-          <%= f.text_field :recruiter_email %>
-        </div>
-      </td>
-      <td>
-        <div class="field">
-          <%= f.label :recruiter_phone %>
-          <%= f.text_field :recruiter_phone %>
+          <%= f.label :recruiter %><br/>
+          <%= f.text_field :recruiter, class: "job_edit_field" %>
         </div>
       </td>
     </tr>
@@ -44,14 +29,14 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :recruiter_cell %>
-          <%= f.text_field :recruiter_cell %>
+          <%= f.label :recruiter_email %><br/>
+          <%= f.text_field :recruiter_email, class: "job_edit_field" %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :last_contact %>
-          <input type="text" name="job[last_contact]" value=<%= @job.last_contact.blank? ? Time.now.to_date.strftime("%m-%d-%Y") :  @job.last_contact.to_date.strftime("%m-%d-%Y")%> data-behaviour='datepicker' >
+          <%= f.label :recruiter_phone %><br/>
+          <%= f.text_field :recruiter_phone, class: "job_edit_field" %>
         </div>
       </td>
     </tr>
@@ -59,36 +44,51 @@
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company_website %>
-          <%= f.text_field :company_website %>
+          <%= f.label :recruiter_cell %><br/>
+          <%= f.text_field :recruiter_cell, class: "job_edit_field" %>
+        </div>
+      </td>
+      <td>
+        <div class="field">
+          <%= f.label :last_contact %><br/>
+          <input type="text" name="job[last_contact]", class="job_edit_field" value=<%= @job.last_contact.blank? ? Time.now.to_date.strftime("%m-%d-%Y") :  @job.last_contact.to_date.strftime("%m-%d-%Y")%> data-behaviour='datepicker' >
+        </div>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="field">
+          <%= f.label :company_website %><br/>
+          <%= f.text_field :company_website, class: "job_edit_field" %>
         </div>
       </td>
       <td>
         <div class="field">
           <%= f.label :position %> <span class="required"> *  </span> <br/>
-          <%= f.text_field :position %>
+          <%= f.text_field :position, class: "job_edit_field" %>
         </div>
       </td>
     </tr>
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company_contact %>
-          <%= f.text_field :company_contact %>
+          <%= f.label :company_contact %><br/>
+          <%= f.text_field :company_contact, class: "job_edit_field" %>
         </div>
       </td>
       <td>
         <div class="field">
-          <%= f.label :company_phone %>
-          <%= f.text_field :company_phone %>
+          <%= f.label :company_phone %><br/>
+          <%= f.text_field :company_phone, class: "job_edit_field" %>
         </div>
       </td>
     </tr>
     <tr>
       <td>
         <div class="field">
-          <%= f.label :company_address %>
-          <%= f.text_area :company_address %>
+          <%= f.label :company_address %><br/>
+          <%= f.text_area :company_address, class: "job_edit_field" %>
         </div>
       </td>
       <td>
@@ -101,8 +101,8 @@
   </table>
 
   <div class="field">
-     <%= f.label :comments %>
-     <%= f.text_area :comments, class: "comments"%>
+     <%= f.label :comments %><br/>
+     <%= f.text_area :comments, class: "comments job_edit_field"%>
    </div>
 
   <div class="actions">
