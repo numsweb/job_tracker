@@ -14,17 +14,18 @@ class Job < ActiveRecord::Base
         @jobs = Job.all.order("#{params[:order]} #{params[:sort_order]}")
       end
     elsif params[:search] && params[:search][:item]
+      search_item = params[:search][:item].downcase
       @jobs = Job.where(
-          "LOWER(company) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(recruiter) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(recruiter_email) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(recruiter_phone) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(company_website) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(company_address) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(company_contact) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(company_phone) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(position) LIKE '%#{params[:search][:item].downcase}%'
-            OR LOWER(comments) LIKE '%#{params[:search][:item].downcase}%'
+          "LOWER(company) LIKE '%#{search_item}%'
+            OR LOWER(recruiter) LIKE '%#{search_item}%'
+            OR LOWER(recruiter_email) LIKE '%#{search_item}%'
+            OR LOWER(recruiter_phone) LIKE '%#{search_item}%'
+            OR LOWER(company_website) LIKE '%#{search_item}%'
+            OR LOWER(company_address) LIKE '%#{search_item}%'
+            OR LOWER(company_contact) LIKE '%#{search_item}%'
+            OR LOWER(company_phone) LIKE '%#{search_item}%'
+            OR LOWER(position) LIKE '%#{search_item}%'
+            OR LOWER(comments) LIKE '%#{search_item}%'
             "
       ).order("created_at ASC")
     else
