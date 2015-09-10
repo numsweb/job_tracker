@@ -20,8 +20,10 @@
 
 <br/>
 <% filter_link = params[:filter].blank? ? '' : '?filter=' + params[:filter]%>
-
-<div class="jobs-table">
+<% if @jobs.blank? %>
+  <p>No Matching Jobs! </p>
+<% else %>
+  <div class="jobs-table">
     <table>
       <thead>
         <tr>
@@ -29,31 +31,26 @@
           <th><%= link_to "Recruiter", '/jobs_all/recruiter'  + filter_link%></th>
           <th><%= link_to "Last contact", '/jobs_all/last_contact'  + filter_link%></th>
           <th><%= link_to "Status", '/jobs_all/status'  + filter_link%></th>
-          <th colspan="3">Actions</th>
+          <th colspan="3" style="text-align: center;">Actions</th>
         </tr>
       </thead>
 
       <tbody>
-        
-        <% if @jobs.blank? %>
-          <tr><td>No Matching Jobs! </td></tr>
-        <% else %>
-
-          <% @jobs.each do |job| %>
-            <tr  style="<%= job.status.style  %>" >
-              <td><%= job.company %></td>
-              <td><%= job.recruiter[0..20] unless job.recruiter.blank? %></td>
-              <td class="last-contact"><%= job.last_contact.strftime("%m-%d-%Y") unless job.last_contact.blank? %></td>
-              <td><%= job.status.name %></td>
-              <td><%= link_to 'Show', job, class: "btn btn-primary btn-small" %></td>
-              <td><%= link_to 'Edit', edit_job_path(job), class: "btn btn-primary btn-small" %></td>
-              <td><%= link_to 'Destroy', job, class: "btn btn-primary btn-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          <% end %>
-          <% end %>
+        <% @jobs.each do |job| %>
+          <tr  style="<%= job.status.style  %>" >
+            <td><%= job.company %></td>
+            <td><%= job.recruiter[0..20] unless job.recruiter.blank? %></td>
+            <td class="last-contact"><%= job.last_contact.strftime("%m-%d-%Y") unless job.last_contact.blank? %></td>
+            <td><%= job.status.name %></td>
+            <td><%= link_to 'Show', job, class: "btn btn-primary btn-small" %></td>
+            <td><%= link_to 'Edit', edit_job_path(job), class: "btn btn-primary btn-small" %></td>
+            <td><%= link_to 'Destroy', job, class: "btn btn-primary btn-small", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
-</div>
+  </div>
+<% end %>
 <br>
 <div class="new-link">
   <a href="/jobs/new" class="btn btn-primary btn-small"><i class="icon-white icon-heart"></i> New Job</a>
