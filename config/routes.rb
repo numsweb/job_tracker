@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'jobs#index'
 
-  get 'jobs_all/:order' => 'jobs#index'
+  get 'jobs_all/:order', to: 'jobs#index'
+  
+  get 'jobs_filtered/:filter', to: 'jobs#index', as: :jobs_filtered
+
   
   
   devise_scope :user do 
