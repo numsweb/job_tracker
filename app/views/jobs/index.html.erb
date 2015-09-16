@@ -16,7 +16,10 @@
   <div class="row-fluid">
     <% @statuses.each do |status| %>
       <span style="<%=status.style.to_s%>;margin-right: 3px;" >
-        <%= link_to status.name, jobs_filtered_path(filter: status.name), style: status.style.to_s %>
+        <% job_count = get_job_count(status) %>
+        <%# if job_count > 0 %>
+          <%= link_to status.name + " (" + job_count.to_s + ")", jobs_filtered_path(filter: status.name), style: status.style.to_s %>
+        <%# end %>
       </span>
     <% end %>
   </div>
