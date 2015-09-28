@@ -7,16 +7,18 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <%= render :partial => 'layouts/nav' %><br/><br/>
+    <%= render :partial => 'layouts/nav' %>
+   
 
 
 
     <div class="container-fluid">
       <div class="row-fluid">
           <%= bootstrap_flash %>
+           <%= render :partial => "layouts/search_form" %>
           <%= yield %>
       </div>
-
+      <div style="clear: both;"></div>
       <footer>
         <p>&copy; John Kropka 2014, 2015</p>
         <div class="fright"> This website is running <b>Rails: <%= Rails::VERSION::STRING %></b> with Twitter-Bootstrap</div>
