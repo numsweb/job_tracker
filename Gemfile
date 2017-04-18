@@ -14,8 +14,9 @@ gem 'pg'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'rubyXL'
 gem 'bootstrap-datepicker-rails'
-gem 'therubyracer'
+#gem 'therubyracer'
 gem 'rails_semantic_logger', '4.0.0.beta2'
+gem 'rails_12factor'
 
 group :development, :test do
   gem 'rspec-rails'
