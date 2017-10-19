@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150902214909) do
   create_table "statuses", force: true do |t|
     t.string   "name"
     t.string   "style"
+    t.string   "link_style", default: "color: #000000"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
