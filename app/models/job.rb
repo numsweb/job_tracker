@@ -41,7 +41,7 @@ class Job < ActiveRecord::Base
             "
       ).order("statuses.name ASC")
     else
-      @jobs = Job.all.order("statusess.name ASC")
+      @jobs = Job.all.order("statuses.name ASC")
     end
     if params[:filter]
       case params[:filter]
