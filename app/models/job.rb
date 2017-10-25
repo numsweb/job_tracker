@@ -39,9 +39,9 @@ class Job < ActiveRecord::Base
             OR LOWER(position) LIKE '%#{search_item}%'
             OR LOWER(comments) LIKE '%#{search_item}%'
             "
-      ).order("statuses.name ASC")
+      ).order("created_at ASC")
     else
-      @jobs = Job.all.order("statuses.name ASC")
+      @jobs = Job.all.order("created_at ASC")
     end
     if params[:filter]
       case params[:filter]
