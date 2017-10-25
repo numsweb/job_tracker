@@ -18,7 +18,7 @@ class JobsController < ApplicationController
     end
 
     @jobs = Job.search(params.merge(:sort_order => session[:sort_order], :filter => params[:filter]))
-    @statuses = Status.all.order("id ASC")
+    @statuses = Status.all.order("status ASC")
     respond_to do |format|
       format.html { render :index}
       format.json {render @jobs.to_json, status: :ok}
