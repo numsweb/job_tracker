@@ -42,7 +42,6 @@ GEM
     bootstrap-datepicker-rails (1.4.0)
       railties (>= 3.0)
     builder (3.2.2)
-    byebug (6.0.2)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -233,7 +232,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-datepicker-rails
-  byebug
   capistrano
   capybara
   coffee-rails (~> 4.0.0)
