@@ -8,6 +8,7 @@
 
   <div class="row-fluid">
     <% status_selections = [] %>
+    <% status_selections << ["All",  jobs_path] %>
     <% @statuses.each do |status| %>
       <span style="<%=status.style.to_s%>;margin-right: 3px;" >
         <% job_count = get_job_count(status) %>
@@ -20,11 +21,13 @@
   </div>
   <div class="row-fluid">
     <label>Filter by Status: </label>
-    <%= select "jobs_select", "id", status_selections, { include_blank: true } %>
+    <%= select "jobs_select", "id", status_selections, { include_blank: false } %>
   </div>
 
   <br/>
   <% filter_link = params[:filter].blank? ? '' : '?filter=' + params[:filter]%>
+
+  <p> Showing results for:  <%= @selected_status %> </p>
   <% if @jobs.blank? %>
     <p>No Matching Jobs! </p>
   <% else %>

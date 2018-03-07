@@ -16,7 +16,8 @@ class JobsController < ApplicationController
           session[:sort_order] = "ASC"
       end
     end
-
+    @selected_status = params[:filter]
+    @selected_status = "All" if @selected_status.blank?
     @jobs = Job.search(params.merge(:sort_order => session[:sort_order], :filter => params[:filter]))
     @statuses = Status.all.order("name ASC")
     respond_to do |format|
