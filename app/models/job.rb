@@ -44,7 +44,7 @@ class Job < ActiveRecord::Base
       @jobs = Job.all.order("status_id ASC")
     end
     if params[:filter]
-      case params[:filter]
+      case params[:filter].gsub!("%20", " ")
         when "New"
           @jobs = @jobs.status_new
         when "Waiting Feedback"
